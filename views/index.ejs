@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NumberFacts</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+
+
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <h1>NumberFacts</h1>
+    <hr>
+
+    <div class="container">
+        <p class="paragraph-1">Ready to learn something about your favourite number? Make your choices below to
+            <em>GET</em> your facts (API
+            pun).</p>
+
+        <form action="/" method="post">
+            <label for="factType">Choose your fact type:</label>
+            <select class="inputstext" name="factType" id="factType">
+                <option value="any">Any</option>
+                <option value="math">Math</option>
+                <option value="year">Year</option>
+                <option value="date">Date</option>
+                <option value="trivia">Trivia</option>
+            </select>
+
+            <br>
+
+            <label for="randomToggle">Use Random Number</label>
+            <input class="checkbox" type="checkbox" id="randomToggle" name="randomNum" value=true
+                onchange="toggleInput()"> <br>
+            <input class="inputstext" name="num" maxlength="4" id="inputBox" placeholder="Enter your number">
+            <br>
+
+            <h1 id="number-demo"><%=number%></h1>
+
+            <button type="submit">Go</button>
+        </form>
+        <div class="fact-text">
+            <p>
+                <%-fact %>
+            </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
