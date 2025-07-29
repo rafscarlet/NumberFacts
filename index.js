@@ -9,7 +9,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-    res.render("index.ejs");
+    res.render("index.ejs", {number:"0000", fact:"Here you learn :P"});
 });
 
 app.post("/", async (req, res) => {
@@ -18,7 +18,7 @@ app.post("/", async (req, res) => {
     let fact = '';
     let number = '';
 
-    console.log(type);
+    // console.log(type);
 
     if (!!req.body.randomNum) {
         chosen = `random/${type}`;
